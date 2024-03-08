@@ -30,18 +30,22 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //public string DeleteContact(int ID)
-        //{
-         //   using (var Context = new ContactLongContext())
-          //  {
-            //    var itemToRemove = Context.Contacts.SingleOrDefault(x => x.Idcontacts == ID);
-              //  if (itemToRemove != null)
-                //{
-                //    Context.Contacts.Remove(itemToRemove);
-                 //   Context.SaveChanges();
-                 //   return "Artiste supprimé";
-                //}
-          //  }
-        //}
+        public string DeleteContact(int ID)
+        {
+            using (var Context = new ContactLongContext())
+            {
+                var itemToRemove = Context.Contacts.SingleOrDefault(x => x.Idcontacts == ID);
+                if (itemToRemove != null)
+                {
+                    Context.Contacts.Remove(itemToRemove);
+                    Context.SaveChanges();
+                    return "Artiste supprimé";
+                } 
+                else
+                {
+                    return "Artiste non trouvé";
+                }
+            }
+        }
     }
 }

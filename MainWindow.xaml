@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid Name="Window_Container">
         <Button Content="Button" HorizontalAlignment="Left" Margin="360,330,0,0" VerticalAlignment="Top" Click="btn_evenement_click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="420,330,0,0" VerticalAlignment="Top" Click="btn_ajoutcontact_click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="482,330,0,0" VerticalAlignment="Top" Click="btn_listecontact_clicl"/>
+        <Button Content="Ajouter Contact" HorizontalAlignment="Left" Margin="420,330,0,0" VerticalAlignment="Top" Click="btn_ajoutcontact_click"/>
+        <Button Content="Liste Contact" HorizontalAlignment="Left" Margin="530,330,0,0" VerticalAlignment="Top" Click="btn_listecontact_clicl"/>
 
     </Grid>
 </Window>

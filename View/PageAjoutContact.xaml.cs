@@ -24,12 +24,12 @@ namespace Agenda2.View
     public partial class PageAjoutContact : UserControl
     {
         Contact contact;
-        MainWindow main;
-        public PageAjoutContact(MainWindow main)
+
+        public PageAjoutContact()
         {
             InitializeComponent();
             contact = new Contact();
-            this.main = main;
+          
         }
         private void btn_addcontact_click(object sender, RoutedEventArgs e)
         {
