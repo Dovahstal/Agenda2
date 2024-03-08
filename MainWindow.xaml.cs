@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Agenda2.View;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -9,6 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Agenda2.Service.DAO;
+using Agenda2.Agenda2DB;
 
 namespace Agenda2
 {
@@ -23,7 +25,27 @@ namespace Agenda2
         {
             InitializeComponent();
             var AllContact = dao.GetAllContacts();
-            DGContact.ItemsSource = AllContact;
+        }
+
+        private void btn_evenement_click(object sender, RoutedEventArgs e)
+        {
+            Window_Container.Children.Clear();
+            PageEvenements merde = new PageEvenements();
+            Window_Container.Children.Add(merde);
+        }
+
+        private void btn_ajoutcontact_click(object sender, RoutedEventArgs e)
+        {
+            Window_Container.Children.Clear();
+            PageAjoutContact merde = new PageAjoutContact(this);
+            Window_Container.Children.Add(merde);
+        }
+
+        private void btn_listecontact_clicl(object sender, RoutedEventArgs e)
+        {
+            Window_Container.Children.Clear();
+            PageListeContact merde = new PageListeContact();
+            Window_Container.Children.Add(merde);
         }
     }
 }
