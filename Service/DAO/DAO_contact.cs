@@ -11,6 +11,7 @@ namespace Agenda2.Service.DAO
 {
     class DAO_contact
     {
+        //Récupére tout les contacts de la database
         public IEnumerable<Contact> GetAllContacts()
         {
             using (var Context = new ContactLongContext())
@@ -20,6 +21,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
+        //Ajoute un contact à la database
         public string AddContact(Contact contact)
         {
             using (var Context = new ContactLongContext())
@@ -30,6 +32,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
+        //Récupére tout les contacts qui commencent par une lettre spécifié
         public IEnumerable<Contact> GetContactsStartsByName(string name) 
         {
             using (var Context = new ContactLongContext())
@@ -39,6 +42,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
+        //Supprime un contact de la database
         public string DeleteContact(int ID)
         {
             using (var Context = new ContactLongContext())
@@ -54,6 +58,17 @@ namespace Agenda2.Service.DAO
                 {
                     return "Artiste non trouvé";
                 }
+            }
+        }
+
+        //Modifie un contact de la database
+        public void UpdateContact(Contact contact)
+        {
+            using (var Context = new ContactLongContext())
+            {
+                
+                Context.Contacts.Update(contact);
+                Context.SaveChanges();
             }
         }
     }

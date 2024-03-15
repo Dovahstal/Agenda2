@@ -46,5 +46,12 @@ namespace Agenda2.View
             DAO_contact dao = new DAO_contact();
             dao.AddContact(contact);
         }
+
+        //efface le texte dans les textbox
+        private void EffacerTexteTextBox(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = "";
+        }
     }
 }

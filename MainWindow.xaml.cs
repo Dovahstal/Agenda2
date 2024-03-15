@@ -34,13 +34,6 @@ namespace Agenda2
             Window_Container.Children.Add(merde);
         }
 
-        private void btn_ajoutcontact_click(object sender, RoutedEventArgs e)
-        {
-            Window_Container.Children.Clear();
-            PageAjoutContact merde = new PageAjoutContact();
-            Window_Container.Children.Add(merde);
-        }
-
         private void btn_listecontact_clicl(object sender, RoutedEventArgs e)
         {
             Window_Container.Children.Clear();
