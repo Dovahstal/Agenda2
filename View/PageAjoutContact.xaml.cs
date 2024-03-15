@@ -33,6 +33,7 @@ namespace Agenda2.View
         }
         private void btn_addcontact_click(object sender, RoutedEventArgs e)
         {
+            //récupére les valeurs des textbox et les attribut aux attributs de la classe contact
             contact.NomContact = TB_NomContact.Text;
             contact.PrenomContact = TB_PrenomContact.Text;
             contact.EmailContact = TB_EmailContact.Text;
@@ -41,6 +42,7 @@ namespace Agenda2.View
             contact.CodepostalContact = TB_CodepostalContact.Text;
             contact.VilleContact = TB_VilleContact.Text;
             contact.NaissanceContact = TB_NaissanceContact.Text;
+            //ajoute le contact à la database avec les attributs récupérés
             DAO_contact dao = new DAO_contact();
             dao.AddContact(contact);
         }

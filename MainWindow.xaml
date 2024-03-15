@@ -6,10 +6,43 @@
         xmlns:local="clr-namespace:Agenda2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Name="Window_Container">
-        <Button Content="ButtonS" HorizontalAlignment="Left" Margin="360,330,0,0" VerticalAlignment="Top" Click="btn_evenement_click"/>
-        <Button Content="Ajouter Contact" HorizontalAlignment="Left" Margin="420,330,0,0" VerticalAlignment="Top" Click="btn_ajoutcontact_click"/>
-        <Button Content="Liste Contact" HorizontalAlignment="Left" Margin="530,330,0,0" VerticalAlignment="Top" Click="btn_listecontact_clicl"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <!--Menu-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_event" Click="btn_evenement_click">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Events" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="1" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_ajout_contact" Click="btn_ajoutcontact_click">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Ajout Contact" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="2" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_liste_contact" Click="btn_listecontact_clicl">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Liste Contact" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+         
+        </Grid>
+        
+        <!--Container-->
+        <Grid Grid.Row="1" Grid.Column="0" Name="Window_Container">
 
+        </Grid>
     </Grid>
 </Window>

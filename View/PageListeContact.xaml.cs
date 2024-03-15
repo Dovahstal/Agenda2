@@ -20,10 +20,23 @@ namespace Agenda2.View
     public partial class PageListeContact : UserControl
     {
         DAO_contact dao = new DAO_contact();
+
         public PageListeContact()
         {
             InitializeComponent();
             var AllContact = dao.GetAllContacts();
+            DGContact.ItemsSource = AllContact;
+        }
+
+        private void btn_click_del(object sender, RoutedEventArgs e)
+        {
+            //défini une variable dell qui vaut la valeur selectionné dans la liste
+            var dell = (Contact)DGContact.SelectedItem;
+            //supprime la varaible dell
+            dao.DeleteContact(dell.Idcontacts);
+            //réactualise la liste de la database
+            var AllContact = dao.GetAllContacts();
+            //réactualise la liste affiché
             DGContact.ItemsSource = AllContact;
         }
     }

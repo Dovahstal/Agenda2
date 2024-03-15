@@ -10,7 +10,7 @@
         <DataGrid Name="DGContact">
 
         </DataGrid>
-        <TextBox HorizontalAlignment="Left" Margin="400,374,0,0" TextWrapping="Wrap" Name ="ID" Text="ID d'artiste a supprimer" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Supprimer" HorizontalAlignment="Left" Margin="533,374,0,0" VerticalAlignment="Top" Height="35" Width="80" Click="btn_click_del"/>
 
     </Grid>
 </UserControl>

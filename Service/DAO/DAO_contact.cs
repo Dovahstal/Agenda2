@@ -30,6 +30,15 @@ namespace Agenda2.Service.DAO
             }
         }
 
+        public IEnumerable<Contact> GetContactsStartsByName(string name) 
+        {
+            using (var Context = new ContactLongContext())
+            {
+                var Contact_by_name = Context.Contacts.Where(x => x.NomContact.StartsWith(name)).ToList();
+                return Contact_by_name;
+            }
+        }
+
         public string DeleteContact(int ID)
         {
             using (var Context = new ContactLongContext())
