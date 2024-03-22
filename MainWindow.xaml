@@ -60,14 +60,14 @@
                                     </StackPanel>
                                 </Button>
 
-                                <Button Style="{StaticResource menuButton}">
+                            <Button Name="btn_menu_event" Style="{StaticResource menuButton}" Click="btn_evenement_click">
                                     <StackPanel Orientation="Horizontal">
                                         <Icon:PackIconMaterial Kind="CalendarClock" Style="{StaticResource menuButtonIcon}"/>
                                         <TextBlock Text="Events"/>
                                     </StackPanel>
                                 </Button>
 
-                                <Button Style="{StaticResource menuButton}" Background="#7B5CD6" Foreground="White" Click="Button_Click">
+                                <Button Name="btn_menu_contact" Style="{StaticResource menuButton}" Background="#7B5CD6" Foreground="White" Click="btn_contact_click">
                                     <StackPanel Orientation="Horizontal">
                                         <Icon:PackIconMaterial Kind="AccountMultipleOutline" Style="{StaticResource menuButtonIcon}"/>
                                         <TextBlock Text="Contacts"/>
