@@ -27,18 +27,25 @@ namespace Agenda2
             var AllContact = dao.GetAllContacts();
         }
 
-        private void btn_evenement_click(object sender, RoutedEventArgs e)
-        {
-            Window_Container.Children.Clear();
-            PageEvenements merde = new PageEvenements();
-            Window_Container.Children.Add(merde);
-        }
+        //private void btn_evenement_click(object sender, RoutedEventArgs e)
+        //{
+        //    partie_changeante.Children.Clear();
+        //    PageEvenements merde = new PageEvenements();
+        //    partie_changeante.Children.Add(merde);
+        //}
 
         private void btn_listecontact_clicl(object sender, RoutedEventArgs e)
         {
-            Window_Container.Children.Clear();
+            partie_changeante.Children.Clear();
             PageListeContact merde = new PageListeContact();
-            Window_Container.Children.Add(merde);
+            partie_changeante.Children.Add(merde);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            partie_changeante.Children.Clear();
+            PageListeContact merde = new PageListeContact();
+            partie_changeante.Children.Add(merde);
         }
     }
 }

@@ -3,39 +3,111 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:Agenda2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        
-        <!--Menu-->
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Grid.Row="0" Grid.Column="0" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_event" Click="btn_evenement_click">
-                <StackPanel Orientation="Vertical">
-                    <Label Content="Events" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-            <Button Grid.Row="0" Grid.Column="1" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_liste_contact" Click="btn_listecontact_clicl">
-                <StackPanel Orientation="Vertical">
-                    <Label Content="Liste Contact" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-         
-        </Grid>
-        
-        <!--Container-->
-        <Grid Grid.Row="1" Grid.Column="0" Name="Window_Container">
+        Title="MainWindow" Height="720" Width="1080" WindowStartupLocation="CenterScreen" AllowsTransparency="True"
+        Background="Transparent" WindowStyle="None">
 
-        </Grid>
-    </Grid>
+    <Window.Resources>
+            <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </Window.Resources>
+
+    <Border CornerRadius="30" Background="#EFF2F7" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Left Menu-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Menu Icon-->
+                    <Button Style="{StaticResource topButton}" HorizontalAlignment="Left" Margin="20 28 0 35">
+                        <Icon:PackIconMaterial Kind="Menu" Width="15" Height="15" />
+                    </Button>
+
+                    <Border Grid.Row="1" Background="#623ED0" CornerRadius="0 50 0 30">
+                        
+                        <DockPanel>
+                            <!--Menu Logo-->
+                            <Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100" DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
+                                <Ellipse>
+                                    <Ellipse.Fill>
+                                        <ImageBrush />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+
+                            <!--Menu Titles-->
+                            <TextBlock Text="SUB Venki" Foreground="White" FontSize="22" FontWeight="SemiBold" DockPanel.Dock="Top" Margin="5 25 0 10" TextAlignment="Center"/>
+                            <TextBlock Text="Members, Annecy" Foreground="#D0BFFF" FontSize="14" FontWeight="SemiBold" DockPanel.Dock="Top" TextAlignment="Center"/>
+
+                            <!--Menu Seprator-->
+                            <Separator Margin="25" Background="#7E5FDC" DockPanel.Dock="Top" Height="0.8"/>
+
+                            <!--Menu Buttons-->
+                            <StackPanel DockPanel.Dock="Top" >
+                                <Button Style="{StaticResource menuButton}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Icon:PackIconMaterial Kind="HomeVariant" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Dashboard"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource menuButton}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Icon:PackIconMaterial Kind="CalendarClock" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Events"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource menuButton}" Background="#7B5CD6" Foreground="White" Click="Button_Click">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Icon:PackIconMaterial Kind="AccountMultipleOutline" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Contacts"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource menuButton}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Icon:PackIconMaterial Kind="CashMultiple" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Task"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource menuButton}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Icon:PackIconMaterial Kind="ForumOutline" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Messages"/>
+                                    </StackPanel>
+                                </Button>
+
+                            </StackPanel>
+
+                            <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Logout"/>
+                                </StackPanel>
+                            </Button>
+
+                        </DockPanel>
+                    </Border>
+
+                </Grid>
+
+            <Grid Grid.Column="1" Name="partie_changeante">
+                
+            </Grid>
+
+                
+
+            </Grid>
+        </Border>
 </Window>
