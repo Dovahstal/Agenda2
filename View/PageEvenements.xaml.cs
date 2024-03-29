@@ -23,9 +23,12 @@ namespace Agenda2.View
     /// </summary>
     public partial class PageEvenements : UserControl
     {
+        DAO_contact dao = new DAO_contact();
+        Contact contact;
         public PageEvenements()
         {
             InitializeComponent();
+            var Allevenement = dao.GetAllContacts();
         }
     }
 }

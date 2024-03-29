@@ -32,21 +32,21 @@
                         <Icon:PackIconMaterial Kind="Menu" Width="15" Height="15" />
                     </Button>
 
-                    <Border Grid.Row="1" Background="#623ED0" CornerRadius="0 50 0 30">
+                <Border Grid.Row="1" Background="#6d071a" CornerRadius="0 50 0 30">
                         
                         <DockPanel>
                             <!--Menu Logo-->
-                            <Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100" DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
+                            <!--<Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100" DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
                                 <Ellipse>
                                     <Ellipse.Fill>
                                         <ImageBrush />
                                     </Ellipse.Fill>
                                 </Ellipse>
-                            </Border>
+                            </Border>-->
 
                             <!--Menu Titles-->
-                            <TextBlock Text="SUB Venki" Foreground="White" FontSize="22" FontWeight="SemiBold" DockPanel.Dock="Top" Margin="5 25 0 10" TextAlignment="Center"/>
-                            <TextBlock Text="Members, Annecy" Foreground="#D0BFFF" FontSize="14" FontWeight="SemiBold" DockPanel.Dock="Top" TextAlignment="Center"/>
+                            <TextBlock Text="Long Mathéo" Foreground="White" FontSize="22" FontWeight="SemiBold" DockPanel.Dock="Top" Margin="5 25 0 10" TextAlignment="Center"/>
+                            <TextBlock Text="Agenda personel" Foreground="#D0BFFF" FontSize="14" FontWeight="SemiBold" DockPanel.Dock="Top" TextAlignment="Center"/>
 
                             <!--Menu Seprator-->
                             <Separator Margin="25" Background="#7E5FDC" DockPanel.Dock="Top" Height="0.8"/>
