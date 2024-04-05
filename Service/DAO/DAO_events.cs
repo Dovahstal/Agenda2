@@ -32,6 +32,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
+        //supprime un événement de la database
         public string DeleteEvenement(int ID)
         {
             using (var Context = new ContactLongContext())
@@ -47,6 +48,17 @@ namespace Agenda2.Service.DAO
                 {
                     return "Artiste non trouvé";
                 }
+            }
+        }
+
+        //Confirme les modifications d'un événement
+        public string UpdateEvent(Evenement evenement)
+        {
+            using (var Context = new ContactLongContext())
+            {
+                Context.Evenements.Update(evenement);
+                Context.SaveChanges();
+                return "Evenement modifié";
             }
         }
     }

@@ -19,12 +19,12 @@ namespace Agenda2
     /// </summary>
     public partial class MainWindow : Window
     {
-        DAO_contact dao = new DAO_contact();
+
 
         public MainWindow()
         {
             InitializeComponent();
-            var AllContact = dao.GetAllContacts();
+          
         }
 
         private void btn_evenement_click(object sender, RoutedEventArgs e)
@@ -39,6 +39,14 @@ namespace Agenda2
             partie_changeante.Children.Clear();
             PageListeContact merde = new PageListeContact();
             partie_changeante.Children.Add(merde);
+        }
+
+        private void btn_taches_click(object sender, RoutedEventArgs e)
+        {
+            partie_changeante.Children.Clear();
+            PageAjoutTache merde = new PageAjoutTache();
+            partie_changeante.Children.Add(merde);
+
         }
     }
 }

@@ -17,10 +17,10 @@
         <TextBox HorizontalAlignment="Left" Height="35" Margin="660,10,0,0" TextWrapping="Wrap" Name="TB_CodepostalContact" Text="CodepostalContact" VerticalAlignment="Top" Width="125" GotFocus="EffacerTexteTextBox"/>
         <TextBox HorizontalAlignment="Left" Height="35" Margin="660,50,0,0" TextWrapping="Wrap" Name="TB_VilleContact" Text="VilleContact" VerticalAlignment="Top" Width="125" GotFocus="EffacerTexteTextBox"/>
         <TextBox HorizontalAlignment="Left" Height="35" Margin="530,50,0,0" TextWrapping="Wrap" Name="TB_NaissanceContact" Text="NaissanceContact" VerticalAlignment="Top" Width="125" GotFocus="EffacerTexteTextBox"/>
-        <Button Style="{StaticResource addButton}" HorizontalAlignment="Center" Margin="0,190,0,225">
+        <Button Style="{StaticResource addButton}" HorizontalAlignment="Center" Margin="0,190,0,225" Click="btn_addcontact_click">
             <StackPanel Orientation="Horizontal">
                 <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
-                <TextBlock Text="Add New Member"/>
+                <TextBlock Text="Ajouter Contact"/>
             </StackPanel>
         </Button>
     </Grid>

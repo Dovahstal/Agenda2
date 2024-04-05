@@ -127,6 +127,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button Grid.Row="0" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_ajout_contact" Click="btn_ajoutcontact_click">
                 <StackPanel Orientation="Vertical">
@@ -141,6 +142,11 @@
             <Button Grid.Row="2" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_mod_contact" Click="btn_mod_click">
                 <StackPanel Orientation="Vertical">
                     <Label Content="Modifier Contact" FontSize="13" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="3" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_profilsrs_contact" Click="btn_profilsrs_click">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Voir reseaux" FontSize="17" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
         </Grid>
