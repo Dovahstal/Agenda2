@@ -23,17 +23,19 @@ namespace Agenda2.View
     /// </summary>
     public partial class PageEvenements : UserControl
     {
-        DAO_events dao_event = new DAO_events();
-        DAO_taches dao_taches = new DAO_taches();
+        DAO_events dao_event;
+        DAO_taches dao_taches;
         Evenement evenement;
         Tache tache;
 
         public PageEvenements()
         {
             InitializeComponent();
+            dao_event = new DAO_events();
+            dao_taches = new DAO_taches();
+            evenement = new Evenement();
             var Allevenement = dao_event.GetAllEvenements();
             DGEvents.ItemsSource = Allevenement;
-            evenement = new Evenement();
         }
 
         //boutton affiche un menu différent pour ajouter un evenement

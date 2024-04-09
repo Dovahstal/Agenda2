@@ -22,37 +22,31 @@ namespace Agenda2.View
     {
         DAO_contact dao_contact;
         DAO_profils dao_profil;
-     
-
 
         public PageListeContact()
         {
             InitializeComponent();
-            dao_contact = new DAO_contact();
             dao_profil = new DAO_profils();
+            dao_contact = new DAO_contact();
             var AllContact = dao_contact.GetAllContacts();
             DGContact.ItemsSource = AllContact;
-           
         }
 
         //bouton de suppression de contact
         private void btn_click_del(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Voulez-vous vraiment supprimer ce contact ?", "Suppression", MessageBoxButton.YesNo);
-            if (MessageBoxResult.Yes == MessageBox.Show("Suppresion"))
+            //défini une variable dell qui vaut la valeur selectionné dans la liste
+            var ID = (Contact)DGContact.SelectedItem;
+
+            //pour demander confirmation
+            MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce contact ?", "Confirmation de suppression", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
             {
-                //défini une variable dell qui vaut la valeur selectionné dans la liste
-                var del = (Contact)DGContact.SelectedItem;
                 //supprime la varaible dell
-                dao_contact.DeleteContact(del.Idcontacts);
-                //réactualise la liste de la database
+                dao_contact.DeleteContact(ID.Idcontacts);
+                //pour recharger la liste des contact
                 var AllContact = dao_contact.GetAllContacts();
-                //réactualise la liste affiché
                 DGContact.ItemsSource = AllContact;
-            }
-            else if (MessageBoxResult.No == MessageBox.Show("Annulation"))
-            {
-               
             }
         }
 
@@ -89,7 +83,6 @@ namespace Agenda2.View
             btn_del_contact.IsEnabled = false;
             btn_mod_contact.IsEnabled = false;
             btn_profilsrs_contact.IsEnabled = false;
-
         }
     }
 }

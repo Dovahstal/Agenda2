@@ -27,8 +27,8 @@ namespace Agenda2.View
 
         public PageAjoutEvent()
         {
-            InitializeComponent();
             evenement = new Evenement();
+            InitializeComponent();
         }
 
 

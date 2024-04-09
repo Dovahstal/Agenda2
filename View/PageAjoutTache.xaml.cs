@@ -42,6 +42,7 @@ namespace Agenda2.View
             tache = new Tache();
             tache.NomTache = TB_NomTache.Text;
             tache.DatelimTache = TB_DateLimTache.Text;
+            tache.EvenementIdevenement = int.Parse(TB_EvenementId.Text);
             DAO_taches dao = new DAO_taches();
             dao.AddTache(tache);
         }

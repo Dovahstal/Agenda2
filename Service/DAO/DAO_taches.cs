@@ -12,6 +12,16 @@ namespace Agenda2.Service.DAO
 {
     internal class DAO_taches
     {
+        //recupere toutes les taches
+        public IEnumerable<Tache> GetAllTaches()
+        {
+            using (var Context = new ContactLongContext())
+            {
+                var Taches = Context.Taches.ToList();
+                return Taches;
+            }
+        }
+
         //ajoute une tache à la database
         public string AddTache(Tache tache)
         {

@@ -44,7 +44,7 @@ namespace Agenda2
         private void btn_taches_click(object sender, RoutedEventArgs e)
         {
             partie_changeante.Children.Clear();
-            PageAjoutTache merde = new PageAjoutTache();
+            PageListeTache merde = new PageListeTache();
             partie_changeante.Children.Add(merde);
 
         }
