@@ -71,6 +71,7 @@ namespace Agenda2.View
             btn_profilsrs_contact.IsEnabled = false;
         }
 
+        //affiche les profils de réseaux sociaux d'un contact
         public void btn_profilsrs_click(object sender, RoutedEventArgs e)
         {
             var selectedContact = (Contact)DGContact.SelectedItem;
