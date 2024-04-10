@@ -12,7 +12,7 @@
         <TextBox HorizontalAlignment="Left" Height="35" Margin="276,114,0,0" TextWrapping="Wrap" Name ="TB_NomTache" Text="Nom de la tache" VerticalAlignment="Top" Width="124" GotFocus="EffacerTexteTextBox"/>
         <TextBox HorizontalAlignment="Left" Height="35" Margin="276,35,0,0" TextWrapping="Wrap" Name="TB_DateLimTache" Text="Date limite de la tache" VerticalAlignment="Top" Width="124" GotFocus="EffacerTexteTextBox"/>
         <TextBox HorizontalAlignment="Left" Height="35" Margin="405,35,0,0" TextWrapping="Wrap" Name="TB_StatutTache" Text="Statut de la tache" VerticalAlignment="Top" Width="125" GotFocus="EffacerTexteTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="406,114,0,0" TextWrapping="Wrap" x:Name ="TB_NomTache_Copy" Text="Nom de la tache" VerticalAlignment="Top" Width="124" GotFocus="EffacerTexteTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="406,114,0,0" TextWrapping="Wrap" Name ="TB_IDEventDeTache" Text="Id de l'event correspondant" VerticalAlignment="Top" Width="124" GotFocus="EffacerTexteTextBox"/>
         <Button Style="{StaticResource addButton}" HorizontalAlignment="Center" Margin="0,190,0,225" Click="btn_addtache_click">
             <StackPanel Orientation="Horizontal">
                 <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>

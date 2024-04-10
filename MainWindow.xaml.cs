@@ -48,5 +48,16 @@ namespace Agenda2
             partie_changeante.Children.Add(merde);
 
         }
+
+        private void btn_sortie_click(object sender, RoutedEventArgs e)
+        {
+            //ferme l'application après avoir demandé une confirmation
+            MessageBoxResult result = MessageBox.Show("Voulez-vous fermer l'agenda ?", "Bouton de fermeture", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+
+        }
     }
 }

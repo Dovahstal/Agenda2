@@ -77,10 +77,10 @@
 
                         </StackPanel>
 
-                            <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
+                            <Button Style="{StaticResource menuButton}" Name="btn_sortie" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20" Click="btn_sortie_click">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
-                                    <TextBlock Text="Logout"/>
+                                    <TextBlock Text="Fermer l'agenda"/>
                                 </StackPanel>
                             </Button>
 
