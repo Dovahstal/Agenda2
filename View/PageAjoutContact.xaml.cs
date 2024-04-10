@@ -45,6 +45,7 @@ namespace Agenda2.View
             //ajoute le contact à la database avec les attributs récupérés
             DAO_contact dao = new DAO_contact();
             dao.AddContact(contact);
+            MessageBox.Show("Contact ajouté");
         }
 
         //efface le texte dans les textbox

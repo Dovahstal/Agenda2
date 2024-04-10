@@ -13,7 +13,8 @@
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
     </Window.Resources>
 
-    <Border CornerRadius="30" Background="#EFF2F7" >
+    <Border CornerRadius="30" Background="#EFF2F7">
+        
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200"/>
@@ -27,34 +28,21 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <!--Menu Icon-->
-                    <Button Style="{StaticResource topButton}" HorizontalAlignment="Left" Margin="20 28 0 35">
-                        <Icon:PackIconMaterial Kind="Menu" Width="15" Height="15" />
-                    </Button>
-
                 <Border Grid.Row="1" Background="#6d071a" CornerRadius="0 50 0 30">
                         
                         <DockPanel>
-                            <!--Menu Logo-->
-                            <!--<Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100" DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
-                                <Ellipse>
-                                    <Ellipse.Fill>
-                                        <ImageBrush />
-                                    </Ellipse.Fill>
-                                </Ellipse>
-                            </Border>-->
 
                             <!--Menu Titles-->
-                        <TextBlock Text="Long Mathéo" Foreground="White" FontSize="22" FontWeight="SemiBold" DockPanel.Dock="Top" Margin="5 25 0 10" TextAlignment="Center"/>
-                        <TextBlock Text="Agenda personel" Foreground="#C0C0C0" FontSize="14" FontWeight="SemiBold" DockPanel.Dock="Top" TextAlignment="Center"/>
+                            <TextBlock Text="Long Mathéo" Foreground="White" FontSize="22" FontWeight="SemiBold" DockPanel.Dock="Top" Margin="5 25 0 10" TextAlignment="Center"/>
+                            <TextBlock Text="Agenda personel" Foreground="#C0C0C0" FontSize="14" FontWeight="SemiBold" DockPanel.Dock="Top" TextAlignment="Center"/>
 
                             <!--Menu Seprator-->
-                        <Separator Margin="25" Background="White" DockPanel.Dock="Top" Height="0.8"/>
+                            <Separator Margin="25" Background="White" DockPanel.Dock="Top" Height="0.8"/>
 
                             <!--Menu Buttons-->
                             <StackPanel DockPanel.Dock="Top" >
 
-                            <Button Name="btn_menu_event" Style="{StaticResource menuButton}" Click="btn_evenement_click">
+                                <Button Name="btn_menu_event" Style="{StaticResource menuButton}" Click="btn_evenement_click">
                                     <StackPanel Orientation="Horizontal">
                                         <Icon:PackIconMaterial Kind="CalendarClock" Style="{StaticResource menuButtonIcon}"/>
                                         <TextBlock Text="Evenements"/>
@@ -75,7 +63,7 @@
                                     </StackPanel>
                                 </Button>
 
-                        </StackPanel>
+                            </StackPanel>
 
                             <Button Style="{StaticResource menuButton}" Name="btn_sortie" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20" Click="btn_sortie_click">
                                 <StackPanel Orientation="Horizontal">
@@ -86,7 +74,6 @@
 
                         </DockPanel>
                     </Border>
-
                 </Grid>
 
                 <Grid Grid.Column="1">
@@ -94,11 +81,8 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="6.7*"/>
                     </Grid.RowDefinitions>
-                <Grid Grid.Row="1" Name="partie_changeante"/>
-            </Grid>
-
-                
-
+                    <Grid Grid.Row="1" Name="partie_changeante"/>
+                </Grid>             
             </Grid>
         </Border>
 </Window>

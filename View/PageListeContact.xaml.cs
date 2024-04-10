@@ -73,16 +73,20 @@ namespace Agenda2.View
 
         public void btn_profilsrs_click(object sender, RoutedEventArgs e)
         {
-            //recupere l'id du profil selectionné dans une variable ID
-            var IDcontact = (Contact)DGContact.SelectedItem;
-            //recupere le ou les profils correspondants à l'id de contact selectionné
-            var Profils_by_contact = dao_profil.GetProfilByContactID(IDcontact.Idcontacts);
-            //remplace le contenu de la liste des contacts par les profils correspondants
-            DGContact.ItemsSource = Profils_by_contact;
-            btn_ajout_contact.IsEnabled = false;
-            btn_del_contact.IsEnabled = false;
-            btn_mod_contact.IsEnabled = false;
-            btn_profilsrs_contact.IsEnabled = false;
+            var selectedContact = (Contact)DGContact.SelectedItem;
+            if (selectedContact != null)
+            {
+                var Profils_by_contact = dao_profil.GetProfilByContactID(selectedContact.Idcontacts);
+                DGContact.ItemsSource = Profils_by_contact;
+                btn_ajout_contact.IsEnabled = false;
+                btn_del_contact.IsEnabled = false;
+                btn_mod_contact.IsEnabled = false;
+                btn_profilsrs_contact.IsEnabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un contact avant d'exécuter cette action.", "Aucun contact sélectionné", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

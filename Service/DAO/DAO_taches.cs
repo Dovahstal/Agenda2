@@ -12,7 +12,7 @@ namespace Agenda2.Service.DAO
 {
     internal class DAO_taches
     {
-        //recupere toutes les taches
+        //Cette fonction recupere toutes les taches de la database
         public IEnumerable<Tache> GetAllTaches()
         {
             using (var Context = new ContactLongContext())
@@ -22,7 +22,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //ajoute une tache à la database
+        //Cette fonction ajoute une tache à la database
         public string AddTache(Tache tache)
         {
             using (var Context = new ContactLongContext())
@@ -33,7 +33,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //supprime une tache de la database
+        //Cette fonction supprime une tache de la database en fonction de son ID
         public string DeleteTache(int ID)
         {
             using (var Context = new ContactLongContext())
@@ -50,9 +50,9 @@ namespace Agenda2.Service.DAO
                     return "Tache non trouvée";
                 }
             }
-        } 
-        
-        //Modifie une tache
+        }
+
+        //Cette fonction modifie les attributs d'une tache dans la database
         public string UpdateTache(Tache tache)
         {
             using (var Context = new ContactLongContext())
@@ -63,7 +63,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //recupere les taches en fonction d'un ID d'événement
+        //Cette fonction récupére les taches associé a un événement par l'ID de l'événement
         public IEnumerable<Tache> GetTacheByEventID(int ID)
         {
             using (var Context = new ContactLongContext())
@@ -72,6 +72,5 @@ namespace Agenda2.Service.DAO
                 return Taches_by_event;
             }
         }
-        
     }
 }

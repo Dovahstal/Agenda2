@@ -45,6 +45,7 @@ namespace Agenda2.View
             tache.EvenementIdevenement = int.Parse(TB_IDEventDeTache.Text);
             DAO_taches dao = new DAO_taches();
             dao.AddTache(tache);
+            MessageBox.Show("Tâche ajoutée");
         }
     }
 }

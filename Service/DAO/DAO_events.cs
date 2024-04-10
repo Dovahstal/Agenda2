@@ -11,7 +11,7 @@ namespace Agenda2.Service.DAO
 {
     class DAO_events
     {
-        //Récupére tout les événements de la database
+        //Cette fonction récupére tout les événements de la database
         public IEnumerable<Evenement> GetAllEvenements()
         {
             using (var Context = new ContactLongContext())
@@ -21,7 +21,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //Ajoute un événement à la database
+        //Cette fonction ajoute un événement à la database
         public string AddEvenement(Evenement evenement)
         {
             using (var Context = new ContactLongContext())
@@ -32,7 +32,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //supprime un événement de la database
+        //Cette fonction supprime un événement de la database en fonction de son ID d'évenement
         public string DeleteEvenement(int ID)
         {
             using (var Context = new ContactLongContext())
@@ -51,7 +51,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //Confirme les modifications d'un événement
+        //Cette fonction modifie les attributs d'un événement dans la database
         public string UpdateEvent(Evenement evenement)
         {
             using (var Context = new ContactLongContext())

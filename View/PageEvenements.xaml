@@ -15,98 +15,14 @@
 
         <Grid Grid.Column="0" Name="liste_evenements">
             <!--Main Section-->
-            <Grid Grid.Column="1" Margin="30 20 20 20">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
+            <Grid Grid.Column="1" Margin="30 20 20 20"/>
 
-                <!--Search Textbox-->
-                <Grid Width="300" HorizontalAlignment="Left">
+            <DataGrid Name="DGEvents">
 
-                    <TextBox Name="textBoxSearch" Style="{StaticResource searchTextbox}"/>
-
-                    <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15" VerticalAlignment="Center" Margin="0 0 15 0" Foreground="#B0B9C6" HorizontalAlignment="Right" />
-                </Grid>
-
-                <!--Top Buttons-->
-                <Button Style="{StaticResource topButton}" Margin="0 0 20 0" Background="#dcdcdc">
-                    <Icon:PackIconMaterial Kind="Cog"/>
-                </Button>
-
-                <Button Style="{StaticResource topButton}" Margin="0 0 55 0">
-                    <Icon:PackIconMaterial Kind="Bell"/>
-                </Button>
-
-                <!--Page Title-->
-                <TextBlock Text="Contacts" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0" Foreground="#121518" HorizontalAlignment="Left"/>
-
-                <!--Add Button Name="Window_Container" -->
-
-                <!--Members Data Grid-->
-                <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" x:Name="membersDataGrid" Style="{DynamicResource DataGridStyle1}">
-                    <DataGrid.Columns>
-                        <DataGridCheckBoxColumn Header="C" CanUserResize="False" Width="auto" ElementStyle="{StaticResource CheckBoxStyle1}">
-                            <DataGridCheckBoxColumn.HeaderTemplate>
-                                <DataTemplate>
-                                    <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
-                                </DataTemplate>
-                            </DataGridCheckBoxColumn.HeaderTemplate>
-                        </DataGridCheckBoxColumn>
-                        <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
-                        <DataGridTemplateColumn Header="Member" IsReadOnly="True" Width="*">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="{Binding BgColor}">
-                                            <TextBlock Text="{Binding Character}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
-                                        </Border>
-
-                                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="Prenom" Binding="{Binding Prenom}" IsReadOnly="True" Width="*"/>
-                        <DataGridTextColumn Header="Email Address" Binding="{Binding Email}" IsReadOnly="True" Width="*"/>
-                        <DataGridTextColumn Header="Phone Number" Binding="{Binding Phone}" IsReadOnly="True" Width="*"/>
-                        <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button Style="{StaticResource gridEditButton}">
-                                            <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
-                                        </Button>
-                                        <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}">
-                                            <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
-                                        </Button>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-
-                <!--Pagingation Section-->
-
-            </Grid>
-
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="2*"/>
-                </Grid.RowDefinitions>
-                <DataGrid Name="DGEvents">
-                
-                </DataGrid>
-            </Grid>
+            </DataGrid>
 
         </Grid>
+
         <Grid Grid.Column="1" Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -114,24 +30,28 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_ajout_event" Click="btn_ajoutevent_click">
+
+            <Button Grid.Row="0" Style="{StaticResource addButton}" Name="btn_ajout_event" Click="btn_ajoutevent_click" HorizontalAlignment="Center" Margin="0,39,0,38">
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Ajout Evenement" FontSize="13" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="Ajout Evenement" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Grid.Row="1" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_del_event" Click="btn_click_delevent">
+
+            <Button Grid.Row="1" Style="{StaticResource addButton}" Name="btn_del_event" Click="btn_click_delevent" HorizontalAlignment="Center" Margin="0,38,0,39">
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Supprimer Evenement" FontSize="10" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="Supprimer Evenement" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Grid.Row="2" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_mod_event" Click="btn_modevent_click">
+
+            <Button Grid.Row="2" Style="{StaticResource addButton}" Name="btn_mod_event" Click="btn_modevent_click" HorizontalAlignment="Center" Margin="0,39,0,38">
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Modifier Evenement" FontSize="11" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="Modifier Evenement" FontSize="13" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Grid.Row="3" Height="120" Width="120" Background="#FF4eb3b9" Name="btn_taches_event" Click="btn_taches_click">
+
+            <Button Grid.Row="3" Style="{StaticResource addButton}" Name="btn_taches_event" Click="btn_taches_click" HorizontalAlignment="Center" Margin="0,38,0,39">
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Voir Taches" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="Voir Taches" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
         </Grid>

@@ -43,13 +43,10 @@ namespace Agenda2.View
         { 
             //recupere les valeurs des textbox et les attribut aux attributs de la classe evenement
             evenement.NomEvenement = TB_NomEvent.Text;
-
             //ajoute l'evenement à la database avec les attributs récupérés
             DAO_events dao = new DAO_events();
             dao.AddEvenement(evenement);
+            MessageBox.Show("Evenement ajouté");
         }
-
-
-        
     }
 }

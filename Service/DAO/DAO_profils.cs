@@ -11,7 +11,7 @@ namespace Agenda2.Service.DAO
 {
     internal class DAO_profils
     {
-        //recupere les profils en fonction d'un ID de contact
+        //Cette fonction récupére un profil de contact par son ID
         public IEnumerable<Profil> GetProfilByContactID(int ID)
         {
             using (var Context = new ContactLongContext())
@@ -21,7 +21,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //ajoute un profil à la database
+        //Cette fonction ajoute un profil à la database
         public string AddProfil(Profil profil)
         {
             using (var Context = new ContactLongContext())
@@ -32,7 +32,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //supprime un profil de la database
+        //Cette fonction supprime un profil de la database en fonction de son ID
         public string DeleteProfil(int ID)
         {
             using (var Context = new ContactLongContext())
@@ -51,7 +51,7 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //Modifications d'un profil
+        //Cette fonction modifie les attributs d'un profil dans la database
         public string UpdateProfil(Profil profil)
         {
             using (var Context = new ContactLongContext())
