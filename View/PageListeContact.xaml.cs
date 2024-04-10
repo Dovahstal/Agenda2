@@ -75,7 +75,11 @@ namespace Agenda2.View
         public void btn_profilsrs_click(object sender, RoutedEventArgs e)
         {
             var selectedContact = (Contact)DGContact.SelectedItem;
-            if (selectedContact != null)
+            if (selectedContact == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un contact pour voir les profils de ses réseaux sociaux", "Aucun contact sélectionné", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
             {
                 var Profils_by_contact = dao_profil.GetProfilByContactID(selectedContact.Idcontacts);
                 DGContact.ItemsSource = Profils_by_contact;
@@ -83,10 +87,6 @@ namespace Agenda2.View
                 btn_del_contact.IsEnabled = false;
                 btn_mod_contact.IsEnabled = false;
                 btn_profilsrs_contact.IsEnabled = false;
-            }
-            else
-            {
-                MessageBox.Show("Veuillez sélectionner un contact avant d'exécuter cette action.", "Aucun contact sélectionné", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }

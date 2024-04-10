@@ -81,14 +81,23 @@ namespace Agenda2.View
         private void btn_taches_click(object sender, RoutedEventArgs e)
         {
             //recupere l'id de l'evenement selectionné
-            var IDtache = (Evenement)DGEvents.SelectedItem;
-            //recupere les taches corespondant à l'id de l'evenement selectionné
-            var Taches_by_event = dao_taches.GetTacheByEventID(IDtache.Idevenement);
+            var selectedIDEvent = (Evenement)DGEvents.SelectedItem;
+
+            // Vérifie si aucun événement n'est sélectionné
+            if (selectedIDEvent == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un événement pour voir les taches associées.", "Aucun événement sélectionné");
+                return;
+            }
+
+            //recupere les taches correspondant à l'id de l'evenement selectionné
+            var Taches_by_event = dao_taches.GetTacheByEventID(selectedIDEvent.Idevenement);
             DGEvents.ItemsSource = Taches_by_event;
             btn_ajout_event.IsEnabled = false;
             btn_del_event.IsEnabled = false;
             btn_mod_event.IsEnabled = false;
             btn_taches_event.IsEnabled = false;
+
         }
     }
 }
