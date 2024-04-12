@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<appSettings>
+		<add key="databaseConnected" value="false"/>
+		<add key="host" value="localhost"/>
+		<add key="port" value="3306"/>
+		<add key="user" value="admin"/>
+		<add key="password" value=""/>
+		<add key="contact_long" value="gestion"/>
+		<add key="mysqlVer" value="8.0.21-mysql"/>
+		<add key="loginUser" value="admin"/>
+		<add key="loginMdp" value="admin"/>
+	</appSettings>
+</configuration>

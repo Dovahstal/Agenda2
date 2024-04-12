@@ -35,14 +35,15 @@ namespace Agenda2.View
         private void btn_ajoutache_click(object sender, RoutedEventArgs e)
         {
             liste_taches.Children.Clear();
-            PageAjoutTache merde = new PageAjoutTache();
-            liste_taches.Children.Add(merde);
+            PageAjoutTache nouvellepage = new PageAjoutTache();
+            liste_taches.Children.Add(nouvellepage);
         }
 
         private void btn_deltache_click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Voulez-vous vraiment supprimer cette tache ?", "Suppression", MessageBoxButton.YesNo);
-            if (MessageBoxResult.Yes == MessageBox.Show("Annulation"))
+            MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cette tache ?", "Confirmation de suppression", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
             {
                 var ID = (Tache)DGTache.SelectedItem;
                 dao_tache.DeleteTache(ID.IdTache);
@@ -55,9 +56,16 @@ namespace Agenda2.View
         private void btn_modtache_click(object sender, RoutedEventArgs e)
         {
             var mod = (Tache)DGTache.SelectedItem;
-            dao_tache.UpdateTache(mod);
-            var AllTaches = dao_tache.GetAllTaches();
-            DGTache.ItemsSource = AllTaches;
+            if (mod == null)
+            {
+                MessageBox.Show("Veuillez sélectionner une tache a modifier", "Aucune tache sélectionnée", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                dao_tache.UpdateTache(mod);
+                var AllTaches = dao_tache.GetAllTaches();
+                DGTache.ItemsSource = AllTaches;
+            }
         }
     }
 }

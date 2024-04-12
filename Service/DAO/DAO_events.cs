@@ -32,22 +32,17 @@ namespace Agenda2.Service.DAO
             }
         }
 
-        //Cette fonction supprime un événement de la database en fonction de son ID d'évenement
+        //Cette fonction supprime un événement de la database en fonction de son ID
         public string DeleteEvenement(int ID)
         {
             using (var Context = new ContactLongContext())
             {
-                var itemToRemove = Context.Contacts.SingleOrDefault(x => x.Idcontacts == ID);
-                if (itemToRemove != null)
-                {
-                    Context.Contacts.Remove(itemToRemove);
+                var itemToRemove = Context.Evenements.SingleOrDefault(x => x.Idevenement == ID);
+                
+                    Context.Evenements.Remove(itemToRemove);
                     Context.SaveChanges();
-                    return "Artiste supprimé";
-                }
-                else
-                {
-                    return "Artiste non trouvé";
-                }
+                    return "Evenement supprimé";
+                
             }
         }
 

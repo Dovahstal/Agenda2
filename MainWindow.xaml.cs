@@ -30,22 +30,22 @@ namespace Agenda2
         private void btn_evenement_click(object sender, RoutedEventArgs e)
         {
             partie_changeante.Children.Clear();
-            PageEvenements merde = new PageEvenements();
-            partie_changeante.Children.Add(merde);
+            PageEvenements nouvellepage = new PageEvenements();
+            partie_changeante.Children.Add(nouvellepage);
         }
 
         private void btn_contact_click(object sender, RoutedEventArgs e)
         {
             partie_changeante.Children.Clear();
-            PageListeContact merde = new PageListeContact();
-            partie_changeante.Children.Add(merde);
+            PageListeContact nouvellepage = new PageListeContact();
+            partie_changeante.Children.Add(nouvellepage);
         }
 
         private void btn_taches_click(object sender, RoutedEventArgs e)
         {
             partie_changeante.Children.Clear();
-            PageListeTache merde = new PageListeTache();
-            partie_changeante.Children.Add(merde);
+            PageListeTache nouvellepage = new PageListeTache();
+            partie_changeante.Children.Add(nouvellepage);
 
         }
 

@@ -42,8 +42,8 @@ namespace Agenda2.View
         private void btn_ajoutevent_click(object sender, RoutedEventArgs e)
         {
             liste_evenements.Children.Clear();
-            PageAjoutEvent merde = new PageAjoutEvent();
-            liste_evenements.Children.Add(merde);
+            PageAjoutEvent nouvellepage = new PageAjoutEvent();
+            liste_evenements.Children.Add(nouvellepage);
             //desactiver les boutons de modification et de suppression
             btn_mod_event.IsEnabled = false;
             btn_del_event.IsEnabled = false;
@@ -54,13 +54,13 @@ namespace Agenda2.View
         //boutton de suppression d'evenement
         private void btn_click_delevent(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Voulez-vous vraiment supprimer cet evenement ?", "Suppression", MessageBoxButton.YesNo);
-            if (MessageBoxResult.Yes == MessageBox.Show("Annulation"))
+            var ID = (Evenement)DGEvents.SelectedItem;
+
+            MessageBoxResult result = MessageBox.Show("Voulez-vous vraiment supprimer cet evenement ?", "Confirmation de suppresion", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
             {
-                //défini une variable dell qui vaut la valeur selectionné dans la liste
-                var del = (Evenement)DGEvents.SelectedItem;
-                //supprime la varaible dell
-                dao_event.DeleteEvenement(del.Idevenement);
+                //supprimer  l'evenement selectionné
+                dao_event.DeleteEvenement(ID.Idevenement);
                 //réactualise la liste de la database
                 var Allevenement = dao_event.GetAllEvenements();
                 //réactualise la liste affiché

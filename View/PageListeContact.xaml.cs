@@ -42,7 +42,6 @@ namespace Agenda2.View
             MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce contact ?", "Confirmation de suppression", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
-                //supprime la varaible dell
                 dao_contact.DeleteContact(ID.Idcontacts);
                 //pour recharger la liste des contact
                 var AllContact = dao_contact.GetAllContacts();
@@ -63,8 +62,8 @@ namespace Agenda2.View
         private void btn_ajoutcontact_click(object sender, RoutedEventArgs e)
         {
             liste_contact.Children.Clear();
-            PageAjoutContact merde = new PageAjoutContact();
-            liste_contact.Children.Add(merde);
+            PageAjoutContact nouvellepage = new PageAjoutContact();
+            liste_contact.Children.Add(nouvellepage);
             //desactive supprimer contact et modifier contact quand on clique sur ajouter contact
             btn_del_contact.IsEnabled = false;
             btn_mod_contact.IsEnabled = false;
