@@ -8,12 +8,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
 
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="276,114,0,0" TextWrapping="Wrap" Name ="TB_NomTache" Text="Nom de la tache" VerticalAlignment="Top" Width="124" GotFocus="EffacerTexteTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="276,35,0,0" TextWrapping="Wrap" Name="TB_DateLimTache" Text="Date limite de la tache" VerticalAlignment="Top" Width="124" GotFocus="EffacerTexteTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="405,35,0,0" TextWrapping="Wrap" Name="TB_StatutTache" Text="Statut de la tache" VerticalAlignment="Top" Width="125" GotFocus="EffacerTexteTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="406,114,0,0" TextWrapping="Wrap" Name ="TB_IDEventDeTache" Text="Id de l'event correspondant" VerticalAlignment="Top" Width="124" GotFocus="EffacerTexteTextBox"/>
-        <Button Style="{StaticResource addButton}" HorizontalAlignment="Center" Margin="0,190,0,225" Click="btn_addtache_click">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,10" Text="Nom de la tache" GotFocus="EffacerTexteTextBox" Width="150" Name="TB_NomTache"/>
+        <TextBox Grid.Row="1" HorizontalAlignment="Center" Margin="0,0,0,10" Text="Date limite de la tache" GotFocus="EffacerTexteTextBox" Width="150" Name="TB_DateLimTache"/>
+        <TextBox Grid.Row="2" HorizontalAlignment="Center" Margin="0,0,0,10" Text="Statut de la tache" GotFocus="EffacerTexteTextBox" Width="150"/>
+        <TextBox Grid.Row="3" HorizontalAlignment="Center" Margin="0,0,0,10" Text="Id de l'event correspondant" GotFocus="EffacerTexteTextBox" Width="150" Name="TB_IDEventDeTache"/>
+
+        <Button Grid.Row="3" Style="{StaticResource addButton}" HorizontalAlignment="Center" Margin="0,40,0,-30" Click="btn_addtache_click">
             <StackPanel Orientation="Horizontal">
                 <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
                 <TextBlock Text="Ajouter Tache"/>

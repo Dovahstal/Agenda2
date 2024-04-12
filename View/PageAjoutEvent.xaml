@@ -8,13 +8,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
     <Grid>
-        <TextBox HorizontalAlignment="Center" Height="35" Margin="0,120,0,0" TextWrapping="Wrap" Name ="TB_NomEvent" Text="NomEvent" VerticalAlignment="Top" Width="124" GotFocus="EffacerTexteTextBox"/>
-        <Button Style="{StaticResource addButton}" HorizontalAlignment="Center" Margin="0,190,0,225" Click="btn_addevent_click">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="0" HorizontalAlignment="Center" Margin="0,120,0,10" Text="Nom du nouvel Event" GotFocus="EffacerTexteTextBox" Width="124" Name="TB_NomEvent"/>
+
+        <Button Grid.Row="1" Style="{StaticResource addButton}" HorizontalAlignment="Center" Margin="0,10,0,0" Click="btn_addevent_click">
             <StackPanel Orientation="Horizontal">
                 <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
                 <TextBlock Text="Ajouter Evenement"/>
             </StackPanel>
         </Button>
-
     </Grid>
 </UserControl>

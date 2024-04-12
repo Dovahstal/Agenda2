@@ -71,11 +71,6 @@
             <Setter Property="Padding" Value="15 10" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="0 10" />
-            <!--<Setter Property="Effect" >
-        <Setter.Value>
-            <DropShadowEffect BlurRadius="2" Opacity="0.1" ShadowDepth="1"/>
-        </Setter.Value>
-    </Setter>-->
 
             <Setter Property="Template">
                 <Setter.Value>

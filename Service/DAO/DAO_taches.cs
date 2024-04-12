@@ -10,7 +10,7 @@ using Agenda2.Agenda2DB;
 
 namespace Agenda2.Service.DAO
 {
-    internal class DAO_taches
+    internal class DAO_taches:DAO_events
     {
         //Cette fonction recupere toutes les taches de la database
         public IEnumerable<Tache> GetAllTaches()
