@@ -51,6 +51,7 @@ namespace Agenda2.Service.DAO
         {
             using (var Context = new ContactLongContext())
             {
+
                 Context.Evenements.Update(evenement);
                 Context.SaveChanges();
                 return "Evenement modifié";

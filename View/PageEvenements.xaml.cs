@@ -72,10 +72,18 @@ namespace Agenda2.View
         //confirme les modificiation des attributs d'un evenement
         private void btn_modevent_click(object sender, RoutedEventArgs e)
         {
-            var mod = (Evenement)DGEvents.SelectedItem;
-            dao_event.UpdateEvent(mod);
-            var Allevenement = dao_event.GetAllEvenements();
-            DGEvents.ItemsSource = Allevenement;
+            var selectedEvent = (Contact)DGEvents.SelectedItem;
+            if (selectedEvent == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un evenement à modififer", "Aucun evenement sélectionné", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                var mod = (Evenement)DGEvents.SelectedItem;
+                dao_event.UpdateEvent(mod);
+                var Allevenement = dao_event.GetAllEvenements();
+                DGEvents.ItemsSource = Allevenement;
+            }
         }
 
         private void btn_taches_click(object sender, RoutedEventArgs e)
