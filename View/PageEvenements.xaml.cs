@@ -25,7 +25,7 @@ namespace Agenda2.View
     {
         DAO_events dao_event;
         DAO_taches dao_taches;
-        Evenement evenement;
+    
         Tache tache;
 
         public PageEvenements()
@@ -33,7 +33,7 @@ namespace Agenda2.View
             InitializeComponent();
             dao_event = new DAO_events();
             dao_taches = new DAO_taches();
-            evenement = new Evenement();
+    
             var Allevenement = dao_event.GetAllEvenements();
             DGEvents.ItemsSource = Allevenement;
         }
